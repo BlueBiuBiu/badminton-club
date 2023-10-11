@@ -1,0 +1,42 @@
+{
+  "pages": [
+    {
+      "path": "pages/home/index",
+      "style": {}
+    },
+    {
+      "path": "pages/activity/index",
+      "style": {}
+    },
+    {
+      "path": "pages/mine/index",
+      "style": {}
+    }
+  ],
+  "globalStyle": {
+    "navigationBarTextStyle": "white",
+    "navigationBarBackgroundColor": "#3f3f3f",
+    "backgroundColor": "#3f3f3f"
+  },
+  "tabBar": {
+    "color": "#fff",
+    "selectedColor": "#ff8707",
+    "borderStyle": "black",
+    "backgroundColor": "#292929",
+    "list": [
+      {
+        "pagePath": "pages/home/index",
+        "iconPath": "./static/tabbar/mine.png",
+        "selectedIconPath": "./static/tabbar/home-active.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/mine/index",
+        "iconPath": "./static/tabbar/mine.png",
+        "selectedIconPath": "./static/tabbar/mine-active.png",
+        "text": "我的"
+      }
+    ]
+  },
+  "uniIdRouter": {}
+}
