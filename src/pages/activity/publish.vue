@@ -1,6 +1,6 @@
 <template>
-  <div class="activity">
-    <h2>activity</h2>
+  <div class="publish">
+    <h2>publish</h2>
   </div>
 </template>
 
@@ -14,9 +14,11 @@
 /* 监听 */
 
 /* 生命周期 */
+
 </script>
 
 <style lang="less" scoped>
-.activity {
+.publish {
+
 }
 </style>

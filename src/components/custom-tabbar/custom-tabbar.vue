@@ -45,7 +45,7 @@ const tabbarList = ref([
   },
   {
     id: 1,
-    path: "/pages/activity/index",
+    path: "/pages/activity/publish",
     icon: "/static/tabbar/plus.png",
     selectIcon: "/static/tabbar/svg",
     text: "发布活动",
