@@ -29,17 +29,21 @@ const props = withDefaults(
 );
 
 const currentHeight = ref(0);
+const emits = defineEmits(["close"]);
+
+const closePopup = () => {
+  currentHeight.value = 0;
+  setTimeout(() => {
+    emits("close");
+  }, 300);
+};
 
 onMounted(() => {
-  console.log("----------");
-
   currentHeight.value = props.height;
 });
-
-const closePopup = () => {};
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .popup {
   position: fixed;
   width: 100%;
@@ -51,7 +55,7 @@ const closePopup = () => {};
   border-top-left-radius: 30rpx;
   border-top-right-radius: 30rpx;
 
-  transition: height 1ss ease-in;
+  transition: height 0.3s ease-in;
 
   .title {
     width: 100%;

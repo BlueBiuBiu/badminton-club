@@ -45,6 +45,9 @@
     <view class="introduce">
       <view class="content">
         <text class="title">活动介绍</text>
+        <view class="desc">
+          羽毛球赛火热来袭！这里有激烈的对抗，也有友谊的碰撞。无论你是新手还是高手，只要你热爱羽毛球，这里就是你展现自我、挑战自我的舞台。让我们一起挥舞球拍，享受比赛，感受运动的魅力！
+        </view>
       </view>
       <view class="contact">
         <view>
@@ -67,8 +70,8 @@
         </view>
       </view>
       <view class="people">
-        <view>
-          <text class="title">报考成员(112)</text>
+        <view @click="viewPeople">
+          <text class="title">报名成员(112)</text>
           <image
             class="arrow-right"
             src="~@/assets/images/arrow-right.png"
@@ -171,12 +174,13 @@
         </view>
       </view>
     </view>
+
     <view class="sign-up">
       <button class="sign-btn" @click="toSignUp">我要报名</button>
     </view>
 
     <!-- 底部弹出层组件 -->
-    <popup title="报考成员">
+    <popup title="报名成员" v-if="popupVisible" @close="popupVisible = false">
       <scroll-view class="scroll" scroll-y="true">
         <view class="table">
           <view class="tr">
@@ -198,10 +202,18 @@
 </template>
 
 <script setup lang="ts">
+import { ref } from "vue";
+
+const popupVisible = ref(false);
+const viewPeople = () => {
+  popupVisible.value = true;
+};
+
+// 报名
 const toSignUp = () => {};
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .detail {
   .banner {
     position: relative;
@@ -280,6 +292,11 @@ const toSignUp = () => {};
           top: 8rpx;
         }
       }
+
+      .desc {
+        padding: 20rpx;
+        line-height: 50rpx;
+      }
     }
     .contact {
       background-color: #292929;
@@ -337,17 +354,18 @@ const toSignUp = () => {};
         }
       }
       .people-list {
-        padding-bottom: 20rpx;
         .scroll-people-list {
           display: flex;
           white-space: nowrap;
+          padding: 30rpx 0;
+
           .avatar {
-            width: 12%;
+            width: 10%;
             border-radius: 50%;
-            margin-left: 20rpx;
+            margin-left: 50rpx;
 
             &:last-child {
-              margin-right: 20rpx;
+              margin-right: 50rpx;
             }
           }
         }
@@ -356,74 +374,75 @@ const toSignUp = () => {};
   }
 
   .sign-up {
-    position: absolute;
+    position: fixed;
     left: 0;
     right: 0;
     bottom: 0;
-    height: 100rpx;
-    padding: 20rpx 20rpx 0 20rpx;
+    padding: 20rpx;
+    background-color: #393939;
+    z-index: 1;
     .sign-btn {
       color: #fff;
       background-color: #ff8707;
       border-radius: 50rpx;
     }
   }
-}
-
-.table {
-  display: table;
-  width: 100%;
-  border-collapse: collapse;
-  background-color: #3f3f3f;
-  .tr {
-    display: table-row;
-
-    .th {
-      display: table-cell;
-      font-weight: bold;
-      padding: 10rpx;
-      color: #8e8e8e;
-      text-align: center;
-      vertical-align: middle;
-    }
-    .td {
-      display: table-cell;
-      padding: 10rpx;
-      text-align: center;
-      vertical-align: middle;
-    }
-  }
-}
-
-.scroll {
-  width: 100%;
-  height: 500rpx;
-  position: relative;
 
   .table {
     display: table;
-    border-collapse: collapse;
     width: 100%;
-    height: 100%;
-
+    border-collapse: collapse;
+    background-color: #3f3f3f;
     .tr {
       display: table-row;
-      text-align: center;
-      vertical-align: middle;
+
       .th {
         display: table-cell;
         font-weight: bold;
         padding: 10rpx;
         color: #8e8e8e;
-        background-color: #3f3f3f;
-
-        position: sticky;
-        top: 0; /* 列首永远固定在头部  */
+        text-align: center;
+        vertical-align: middle;
       }
-
       .td {
         display: table-cell;
         padding: 10rpx;
+        text-align: center;
+        vertical-align: middle;
+      }
+    }
+  }
+
+  .scroll {
+    width: 100%;
+    height: 500rpx;
+    position: relative;
+
+    .table {
+      display: table;
+      border-collapse: collapse;
+      width: 100%;
+      height: 100%;
+
+      .tr {
+        display: table-row;
+        text-align: center;
+        vertical-align: middle;
+        .th {
+          display: table-cell;
+          font-weight: bold;
+          padding: 10rpx;
+          color: #8e8e8e;
+          background-color: #3f3f3f;
+
+          position: sticky;
+          top: 0; /* 列首永远固定在头部  */
+        }
+
+        .td {
+          display: table-cell;
+          padding: 10rpx;
+        }
       }
     }
   }

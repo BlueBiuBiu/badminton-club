@@ -14,11 +14,9 @@
 /* 监听 */
 
 /* 生命周期 */
-
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .join {
-
 }
 </style>

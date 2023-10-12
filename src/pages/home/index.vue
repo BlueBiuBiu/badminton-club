@@ -21,7 +21,12 @@
       <!-- 活动列表 -->
       <view class="tab">最新活动</view>
       <view class="list">
-        <view class="item" v-for="item in 7" :key="item" @click="itemClick(item)">
+        <view
+          class="item"
+          v-for="item in 7"
+          :key="item"
+          @click="itemClick(item)"
+        >
           <view class="left">
             <image
               class="cover"
@@ -115,7 +120,7 @@ const viewMore = () => {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="scss" scoped>
 .home {
   .banner {
     width: 100%;
