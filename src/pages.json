@@ -34,7 +34,15 @@
     "navigationBarTextStyle": "white",
     "navigationBarBackgroundColor": "#3f3f3f",
     "backgroundColor": "#3f3f3f",
-    "navigationBarTitleText": "羽毛球社"
+    "navigationBarTitleText": "羽毛球社",
+    "usingComponents": {
+      "van-uploader": "/wxcomponents/dist/uploader/index",
+      "van-datetime-picker": "/wxcomponents/dist/datetime-picker/index",
+      "van-overlay": "/wxcomponents/dist/overlay/index",
+      "van-tab": "/wxcomponents/dist/tab/index",
+      "van-tabs": "/wxcomponents/dist/tabs/index",
+      "van-search": "/wxcomponents/dist/search/index"
+    }
   },
   "tabBar": {
     "color": "#fff",
