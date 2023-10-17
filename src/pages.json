@@ -41,7 +41,8 @@
       "van-overlay": "/wxcomponents/dist/overlay/index",
       "van-tab": "/wxcomponents/dist/tab/index",
       "van-tabs": "/wxcomponents/dist/tabs/index",
-      "van-search": "/wxcomponents/dist/search/index"
+      "van-search": "/wxcomponents/dist/search/index",
+      "van-empty": "/wxcomponents/dist/empty/index"
     }
   },
   "tabBar": {
